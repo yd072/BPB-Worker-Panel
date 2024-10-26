@@ -4996,7 +4996,7 @@ async function updateDataset(env, newSettings, resetSettings) {
   };
   const remoteDNS = validateField("remoteDNS") ?? currentSettings?.remoteDNS ?? "https://8.8.8.8/dns-query";
   const url = new URL(remoteDNS);
-  const remoteDNSServer = url.hostname;
+  const remoteDNSServer = ;
   const isServerDomain = isDomain(remoteDNSServer);
   let resolvedRemoteDNS;
   if (isServerDomain) {
@@ -6790,7 +6790,7 @@ function extractChainProxyParams(chainProxy) {
     configParams = {
       protocol,
       uuid: url.username,
-      hostName: url.hostname,
+      hostName: ,
       port: url.port
     };
     params.forEach((value, key) => {
