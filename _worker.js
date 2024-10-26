@@ -2338,13 +2338,13 @@ var require_nacl_fast = __commonJS({
   }
 });
 
-// (disabled):buffer
+ (disabled):buffer
 var require_buffer = __commonJS({
   "(disabled):buffer"() {
   }
 });
 
-// node_modules/js-sha256/src/sha256.js
+ node_modules/js-sha256/src/sha256.js
 var require_sha256 = __commonJS({
   "node_modules/js-sha256/src/sha256.js"(exports, module) {
     (function() {
@@ -2862,16 +2862,16 @@ var require_sha256 = __commonJS({
   }
 });
 
-// src/worker.js
+ src/worker.js
 var import_tweetnacl = __toESM(require_nacl_fast());
 var import_js_sha256 = __toESM(require_sha256());
 import { connect } from "cloudflare:sockets";
 
-// node_modules/jose/dist/browser/runtime/webcrypto.js
+ node_modules/jose/dist/browser/runtime/webcrypto.js
 var webcrypto_default = crypto;
 var isCryptoKey = (key) => key instanceof CryptoKey;
 
-// node_modules/jose/dist/browser/lib/buffer_utils.js
+ node_modules/jose/dist/browser/lib/buffer_utils.js
 var encoder = new TextEncoder();
 var decoder = new TextDecoder();
 var MAX_INT32 = 2 ** 32;
@@ -2886,7 +2886,7 @@ function concat(...buffers) {
   return buf;
 }
 
-// node_modules/jose/dist/browser/runtime/base64url.js
+ node_modules/jose/dist/browser/runtime/base64url.js
 var encodeBase64 = (input) => {
   let unencoded = input;
   if (typeof unencoded === "string") {
@@ -2900,7 +2900,7 @@ var encodeBase64 = (input) => {
   return btoa(arr.join(""));
 };
 var encode = (input) => {
-  return encodeBase64(input).replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
+  return encodeBase64(input).replace(/=/g, "").replace(/\+/g, "-").replace(/\g, "_");
 };
 var decodeBase64 = (encoded) => {
   const binary = atob(encoded);
@@ -2923,7 +2923,7 @@ var decode = (input) => {
   }
 };
 
-// node_modules/jose/dist/browser/util/errors.js
+ node_modules/jose/dist/browser/util/errors.js
 var JOSEError = class extends Error {
   constructor(message2, options) {
     super(message2, options);
@@ -3038,7 +3038,7 @@ var JWSSignatureVerificationFailed = class extends JOSEError {
 };
 JWSSignatureVerificationFailed.code = "ERR_JWS_SIGNATURE_VERIFICATION_FAILED";
 
-// node_modules/jose/dist/browser/lib/crypto_key.js
+ node_modules/jose/dist/browser/lib/crypto_key.js
 function unusable(name, prop = "algorithm.name") {
   return new TypeError(`CryptoKey does not support this operation, its ${prop} must be ${name}`);
 }
@@ -3132,7 +3132,7 @@ function checkSigCryptoKey(key, alg, ...usages) {
   checkUsage(key, usages);
 }
 
-// node_modules/jose/dist/browser/lib/invalid_key_input.js
+ node_modules/jose/dist/browser/lib/invalid_key_input.js
 function message(msg, actual, ...types2) {
   types2 = types2.filter(Boolean);
   if (types2.length > 2) {
@@ -3161,7 +3161,7 @@ function withAlg(alg, actual, ...types2) {
   return message(`Key for the ${alg} algorithm must be `, actual, ...types2);
 }
 
-// node_modules/jose/dist/browser/runtime/is_key_like.js
+ node_modules/jose/dist/browser/runtime/is_key_like.js
 var is_key_like_default = (key) => {
   if (isCryptoKey(key)) {
     return true;
@@ -3170,7 +3170,7 @@ var is_key_like_default = (key) => {
 };
 var types = ["CryptoKey"];
 
-// node_modules/jose/dist/browser/lib/is_disjoint.js
+ node_modules/jose/dist/browser/lib/is_disjoint.js
 var isDisjoint = (...headers) => {
   const sources = headers.filter(Boolean);
   if (sources.length === 0 || sources.length === 1) {
@@ -3194,7 +3194,7 @@ var isDisjoint = (...headers) => {
 };
 var is_disjoint_default = isDisjoint;
 
-// node_modules/jose/dist/browser/lib/is_object.js
+ node_modules/jose/dist/browser/lib/is_object.js
 function isObjectLike(value) {
   return typeof value === "object" && value !== null;
 }
@@ -3212,7 +3212,7 @@ function isObject(input) {
   return Object.getPrototypeOf(input) === proto;
 }
 
-// node_modules/jose/dist/browser/runtime/check_key_length.js
+ node_modules/jose/dist/browser/runtime/check_key_length.js
 var check_key_length_default = (alg, key) => {
   if (alg.startsWith("RS") || alg.startsWith("PS")) {
     const { modulusLength } = key.algorithm;
@@ -3222,7 +3222,7 @@ var check_key_length_default = (alg, key) => {
   }
 };
 
-// node_modules/jose/dist/browser/lib/is_jwk.js
+ node_modules/jose/dist/browser/lib/is_jwk.js
 function isJWK(key) {
   return isObject(key) && typeof key.kty === "string";
 }
@@ -3236,7 +3236,7 @@ function isSecretJWK(key) {
   return isJWK(key) && key.kty === "oct" && typeof key.k === "string";
 }
 
-// node_modules/jose/dist/browser/runtime/jwk_to_key.js
+ node_modules/jose/dist/browser/runtime/jwk_to_key.js
 function subtleMapping(jwk) {
   let algorithm;
   let keyUsages;
@@ -4328,7 +4328,7 @@ var worker_default = {
               }
             });
           default:
-            url.hostname = "www.speedtest.net";
+            //url.hostname = "www.speedtest.net";
             url.protocol = "https:";
             request = new Request(url, request);
             return await fetch(request);
